@@ -1,58 +1,63 @@
-Cloud Connected Environmental Data Logger with Excel Reporting
-Overview
-This project is an IoT-based Environmental Data Logger developed using the LPC2148 ARM7 Microcontroller. It continuously monitors environmental parameters such as temperature and gas leakage, displays the readings on an LCD, stores configuration data in EEPROM, and uploads sensor data to the ThingSpeak Cloud through the ESP-01 Wi-Fi module. The collected data can be viewed online and exported to Microsoft Excel for analysis and reporting.
+## Cloud Connected Environmental Data Logger with Excel Reporting\
+#Overview
+This project is an IoT-based Environmental Data Logger developed using the LPC2148 ARM7 Microcontroller. It continuously monitors environmental parameters such as temperature and gas leakage, displays the readings on an LCD, stores configuration data in EEPROM, and uploads sensor data to the ThingSpeak Cloud through the ESP-01 Wi-Fi module. The collected data can be viewed online and exported to Microsoft Excel for analysis and reporting.\
 
-Features
-Real-time temperature monitoring using LM35 sensor.
-Gas leakage detection using MQ-2 sensor.
-16x2 LCD display for live sensor readings and system status.
-ESP-01 Wi-Fi module for cloud connectivity.
-Uploads sensor data to ThingSpeak.
-Buzzer/LED alert when gas is detected or temperature exceeds the set limit.
-EEPROM (AT24C256) stores the temperature set point.
-Cloud data can be exported to Excel for reports and analysis.
-📊 Project Block Diagram
-Project Block Diagram
+#Features\
+Real-time temperature monitoring using LM35 sensor.\
+Gas leakage detection using MQ-2 sensor.\
+16x2 LCD display for live sensor readings and system status.\
+ESP-01 Wi-Fi module for cloud connectivity.\
+Uploads sensor data to ThingSpeak.\
+Buzzer/LED alert when gas is detected or temperature exceeds the set limit.\
+EEPROM (AT24C256) stores the temperature set point.\
+Cloud data can be exported to Excel for reports and analysis.\
 
-Hardware Components Used
-LPC2148 ARM7 Microcontroller
-ESP-01 Wi-Fi Module
-LM35 Temperature Sensor
-MQ-2 Gas Sensor
-AT24C256 EEPROM (I2C)
-16x2 LCD Display
-Buzzer/LED
-Power Supply (3.3V / 5V)
-Keypad(4x4)
-Software Used
-Keil µVision
-Flash Magic
-Embedded C Programming
-ThingSpeak Cloud Platform
-Working of the Project
-Step 1: System Initialization
-When power is supplied to the LPC2148 microcontroller, it initializes all the required peripherals and hardware modules.
+📊 Project Block Diagram\
+<img width="1043" height="697" alt="image" src="https://github.com/user-attachments/assets/497d97be-3887-4545-83aa-4aeddad4d8aa" />
 
-LCD is initialized to display messages and sensor readings.
-UART0 is initialized for communication with the ESP-01 Wi-Fi module.
-I2C interface is initialized for communication with the RTC and AT24C256 EEPROM.
-ADC channels are initialized to read analog values from the LM35 and MQ-2 sensors.
-ESP-01 Wi-Fi module is configured using AT commands and connected to the Wi-Fi network.
-After successful initialization, the LCD displays that the system is ready for monitoring.
 
-Step 2: Temperature Measurement Using LM35
-The LM35 temperature sensor continuously senses the surrounding temperature and produces an analog voltage proportional to the temperature.
+#Hardware Components Used\
 
-The sensor output is connected to the ADC input of LPC2148.
-The ADC converts the analog voltage into a digital value.
-The LPC2148 converts this value into temperature in degrees Celsius (°C).
-The measured temperature is updated continuously.
+LPC2148 ARM7 Microcontroller\
+ESP-01 Wi-Fi Module\
+LM35 Temperature Sensor\
+MQ-2 Gas Sensor\
+AT24C256 EEPROM (I2C\
+16x2 LCD Display\
+Buzzer/LED\
+Power Supply (3.3V / 5V)\
+Keypad(4x4)\
 
-Step 3: Gas Leakage Detection Using MQ-2
-The MQ-2 gas sensor detects the presence of combustible gases such as LPG, methane, propane, and smoke.
+#Software Used\
+Keil µVision\
+Flash Magic\
+Embedded C Programming\
+ThingSpeak Cloud Platform\
 
-The sensor output is connected to another ADC channel.
-LPC2148 continuously reads the gas sensor value.
+#Working of the Project\
+Step 1: System Initialization\
+When power is supplied to the LPC2148 microcontroller, it initializes all the required peripherals and hardware modules.\
+
+LCD is initialized to display messages and sensor readings.\
+UART0 is initialized for communication with the ESP-01 Wi-Fi module.\
+I2C interface is initialized for communication with the RTC and AT24C256 EEPROM.\
+ADC channels are initialized to read analog values from the LM35 and MQ-2 sensors.\
+ESP-01 Wi-Fi module is configured using AT commands and connected to the Wi-Fi network.\
+After successful initialization, the LCD displays that the system is ready for monitoring.\
+
+Step 2: Temperature Measurement Using LM35\
+The LM35 temperature sensor continuously senses the surrounding temperature and produces an analog voltage proportional to the temperature.\
+
+The sensor output is connected to the ADC input of LPC2148.\
+The ADC converts the analog voltage into a digital value.\
+The LPC2148 converts this value into temperature in degrees Celsius (°C).\
+The measured temperature is updated continuously.\
+
+Step 3: Gas Leakage Detection Using MQ-2\
+The MQ-2 gas sensor detects the presence of combustible gases such as LPG, methane, propane, and smoke.\
+
+The sensor output is connected to another ADC channel.\
+LPC2148 continuously reads the gas sensor value.\
 The gas value is compared with a predefined threshold to detect gas leakage.
 If the gas concentration exceeds the threshold, the system identifies it as a gas leak.
 
