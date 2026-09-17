@@ -32,7 +32,7 @@ Keypad(4x4)\
 Keil µVision\
 Flash Magic\
 Embedded C Programming\
-ThingSpeak Cloud Platform\
+ThingSpeak Cloud Platform
 
 # Working of the Project
 Step 1: System Initialization\
@@ -207,7 +207,7 @@ Date and time display using RTC.\
 Permanent temperature set point storage in EEPROM.\
 Wi-Fi-based cloud monitoring using ESP-01.\
 ThingSpeak graphical visualization.\
-Excel/CSV report generation for recorded environmental data.\
+Excel/CSV report generation for recorded environmental data.
 
 # ThingSpeak Integration
 The ESP-01 communicates with ThingSpeak using AT commands over UART.
