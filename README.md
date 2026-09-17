@@ -1,8 +1,8 @@
-## Cloud Connected Environmental Data Logger with Excel Reporting\
+## Cloud Connected Environmental Data Logger with Excel Reporting
 # Overview
 This project is an IoT-based Environmental Data Logger developed using the LPC2148 ARM7 Microcontroller. It continuously monitors environmental parameters such as temperature and gas leakage, displays the readings on an LCD, stores configuration data in EEPROM, and uploads sensor data to the ThingSpeak Cloud through the ESP-01 Wi-Fi module. The collected data can be viewed online and exported to Microsoft Excel for analysis and reporting.
 
-# Features\
+# Features
 Real-time temperature monitoring using LM35 sensor.\
 Gas leakage detection using MQ-2 sensor.\
 16x2 LCD display for live sensor readings and system status.\
@@ -12,11 +12,11 @@ Buzzer/LED alert when gas is detected or temperature exceeds the set limit.\
 EEPROM (AT24C256) stores the temperature set point.\
 Cloud data can be exported to Excel for reports and analysis.
 
-# 📊 Project Block Diagram\
+# 📊 Project Block Diagram
 <img width="1043" height="697" alt="image" src="https://github.com/user-attachments/assets/497d97be-3887-4545-83aa-4aeddad4d8aa" />
 
 
-# Hardware Components Used\
+# Hardware Components Used
 
 LPC2148 ARM7 Microcontroller\
 ESP-01 Wi-Fi Module\
@@ -28,38 +28,38 @@ Buzzer/LED\
 Power Supply (3.3V / 5V)\
 Keypad(4x4)\
 
-# Software Used\
+# Software Used
 Keil µVision\
 Flash Magic\
 Embedded C Programming\
 ThingSpeak Cloud Platform\
 
-# Working of the Project\
+# Working of the Project
 Step 1: System Initialization\
-When power is supplied to the LPC2148 microcontroller, it initializes all the required peripherals and hardware modules.\
+When power is supplied to the LPC2148 microcontroller, it initializes all the required peripherals and hardware modules.
 
-LCD is initialized to display messages and sensor readings.\
+LCD is initialized to display messages and sensor readings.
 UART0 is initialized for communication with the ESP-01 Wi-Fi module.\
 I2C interface is initialized for communication with the RTC and AT24C256 EEPROM.\
 ADC channels are initialized to read analog values from the LM35 and MQ-2 sensors.\
 ESP-01 Wi-Fi module is configured using AT commands and connected to the Wi-Fi network.\
-After successful initialization, the LCD displays that the system is ready for monitoring.\
+After successful initialization, the LCD displays that the system is ready for monitoring.
 
 Step 2: Temperature Measurement Using LM35\
-The LM35 temperature sensor continuously senses the surrounding temperature and produces an analog voltage proportional to the temperature.\
+The LM35 temperature sensor continuously senses the surrounding temperature and produces an analog voltage proportional to the temperature.
 
 The sensor output is connected to the ADC input of LPC2148.\
 The ADC converts the analog voltage into a digital value.\
 The LPC2148 converts this value into temperature in degrees Celsius (°C).\
-The measured temperature is updated continuously.\
+The measured temperature is updated continuously.
 
 Step 3: Gas Leakage Detection Using MQ-2\
-The MQ-2 gas sensor detects the presence of combustible gases such as LPG, methane, propane, and smoke.\
+The MQ-2 gas sensor detects the presence of combustible gases such as LPG, methane, propane, and smoke.
 
 The sensor output is connected to another ADC channel.\
 LPC2148 continuously reads the gas sensor value.\
 The gas value is compared with a predefined threshold to detect gas leakage.\
-If the gas concentration exceeds the threshold, the system identifies it as a gas leak.\
+If the gas concentration exceeds the threshold, the system identifies it as a gas leak.
 
 Step 4: Real-Time Clock (RTC) Operation\
 The RTC module maintains the current date and time.
@@ -87,7 +87,7 @@ The user can change the set point using the keypad or switch.\
 Whenever the set point is changed, LPC2148 writes the new value into EEPROM through I2C.\
 The stored value remains available even after power is turned OFF.\
 Step 7: Threshold Comparison and Alarm Generation\
-LPC2148 continuously compares the measured temperature and gas sensor value with the predefined limits.\
+LPC2148 continuously compares the measured temperature and gas sensor value with the predefined limits.
 
 Condition 1: Temperature greater than set point.
 
@@ -149,7 +149,7 @@ Compare values with the stored set point.\
 Activate buzzer if temperature or gas exceeds the limit.\
 Upload sensor data to ThingSpeak through ESP-01.\
 Store updated set point in EEPROM whenever modified.\
-Repeat the monitoring process continuously.\
+Repeat the monitoring process continuously.
 
 # Project Flow
 
@@ -179,7 +179,7 @@ Store Set Point in EEPROM
 
 Repeat Monitoring
 
-# Project Structure\
+# Project Structure
 Final_Majorp/\
 ├── main.c\
 ├── uart.c\
@@ -239,7 +239,7 @@ Add humidity sensor (DHT11/DHT22).\
 Mobile app notifications.\
 Email/SMS alerts.\
 Multiple sensor support.\
-SD card data backup.\
+SD card data backup.
 
 # Author
 POREDDY ARAVIND REDDY
